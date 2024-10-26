@@ -1,0 +1,187 @@
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-clr: #f2f2f2;
+  --txt-clr: #222;
+  --border-style: solid;
+}
+
+.show {
+  --bg-clr: #222;
+  --txt-clr: #f2f2f2;
+  --border-style: dashed;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-clr);
+  color: var(--txt-clr);
+}
+
+.wrapper {
+  width: 400px;
+  height: 500px;
+  border: 0.5px solid var(--txt-clr);
+  border-radius: 10px;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+form h1 {
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 0.5px solid var(--txt-clr);
+  padding-bottom: 10px;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 2px var(--border-style) var(--txt-clr);
+  border-radius: 5px;
+  font-size: 18px;
+  color: var(--txt-clr);
+  padding: 0 45px;
+}
+
+.box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  font-size: 18px;
+  color: var(--txt-clr);
+  pointer-events: none;
+}
+
+.pass-link {
+  margin: -15px 0 30px;
+  text-align: right;
+}
+
+.pass-link a {
+  text-decoration: none;
+  font-size: 15px;
+  color: var(--txt-clr);
+}
+
+.pass-link a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  background: #4070f4;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-link {
+  margin-top: 50px;
+  color: var(--txt-clr);
+  font-size: 16px;
+}
+
+.signup-link a {
+  text-decoration: none;
+  color: var(--txt-clr);
+  font-weight: 600;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+  color: #4070f4;
+}
+
+.toggle-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.beam {
+  position: absolute;
+  width: 340px;
+  height: 0;
+  background: yellow;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  mix-blend-mode: difference;
+  transform-origin: 100% 50%;
+  pointer-events: none;
+  overflow: hidden;
+  transition: 0.2s ease-out;
+}
+
+.show .beam {
+  height: 125px;
+}
+
+.toggle-btn svg .eye {
+  fill: var(--txt-clr);
+  transform-origin: center;
+  transition: .3s ease;
+}
+
+.toggle-btn svg .top,
+.toggle-btn svg .bottom,
+.toggle-btn svg .lashes{
+  fill: none;
+  stroke: var(--txt-clr);
+  transform-origin: center;
+  transition: .3s ease;
+}
+
+.toggle-btn svg .lashes {
+  stroke-dasharray: 3px;
+  stroke-dashoffset: 3px;
+}
+
+.show svg .lashes {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+}
+
+.show .toggle-btn svg .top {
+  transform: rotateX(-90deg);
+}
+
+.show .toggle-btn svg .eye {
+  transform: translateY(1px) scaleX(0);
+}
